@@ -2,10 +2,12 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 export const Navbar = (props) => {
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     console.log(props)
     const onLogout = () => {
-        console.log('logout')
+        navigate('/login', {
+
+        });
     }
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
