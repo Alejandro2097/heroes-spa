@@ -9,22 +9,27 @@ export const AppRouter = () => {
   return (
     <>
 
-        <Routes>
+<Routes>
             
-            <Route path="" element={<LoginPage />} />
+            <Route path="login/*" element={
+                <PublicRoute>
+                  {/* <LoginPage /> */}
+                  <Routes>
+                    <Route path="/*" element={<LoginPage />} />
+                  </Routes>
+                </PublicRoute>
+              }
+            />
+            
             
             <Route path="/*" element={
               <PrivateRoute>
-                <HeroesRoutes/>
+                <HeroesRoutes />
               </PrivateRoute>
-            }/>
-            <Route path='login' element={
-              <PublicRoute>
-                <HeroesRoutes/>
-              </PublicRoute>
-            }/>
+            } />
 
-            <Route path="/*" element={ <HeroesRoutes />} />
+            {/* <Route path="login" element={<LoginPage />} /> */}
+            {/* <Route path="/*" element={ <HeroesRoutes />} /> */}
             
             
 
