@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
 
 import { AuthContext } from "../../src/auth";
 import { PublicRoute } from "../../src/router/PublicRoute";
@@ -16,6 +16,13 @@ describe('Pruebas en <PublicRoute/>', () => {
         render(
             <AuthContext.Provider value={contextValue}>
                 <MemoryRouter initialEntries={['/login']}>
+                    <Routes>
+                        <Route path='marvel' element={
+                            <PublicRoute>
+                                <h1>Pagina marvel</h1>
+                            </PublicRoute>
+                        }/>
+                    </Routes>
                     <PublicRoute>
                         <h1>Ruta publica</h1>
                     </PublicRoute>
