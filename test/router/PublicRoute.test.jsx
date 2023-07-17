@@ -4,7 +4,6 @@ import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { AuthContext } from '../../src/auth';
 import { PublicRoute } from '../../src/router/PublicRoute';
 
-
 describe('Pruebas en <PublicRoute />', () => {
     
     test('debe de mostrar el children si no está autenticado', () => {
